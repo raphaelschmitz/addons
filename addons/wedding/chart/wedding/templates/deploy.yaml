@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wedding
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wedding
+  template:
+    metadata:
+      labels:
+        app: wedding
+    spec:
+      containers:
+      - name: wedding
+        image: docker.io/raphaelschmitz/helloworld-php:latest
+        # This app listens on port 8080 for web traffic by default.
+        ports:
+        - containerPort: 8080
+        env:
+          - name: PORT
+            value: "8080"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wedding
+spec:
+  selector:
+    app: wedding
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
