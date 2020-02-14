@@ -4,3 +4,7 @@ entries:
     - name: wedding
       description: "Wedding"
       version: 0.0.1
+  testing:
+    - name: testing
+      description: "Testing addon"
+      version: 0.0.1
