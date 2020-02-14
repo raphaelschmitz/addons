@@ -1,5 +1,5 @@
 name: wedding
 description: Deploy wedding application
-
+appVersion: "0.0.1"
 # Chart version is used to fetch ServiceClass documentation in the same version
 version: 0.0.1
