@@ -8,6 +8,6 @@ tags: wedding
 providerDisplayName: wedding
 longDescription: weding description
 documentationURL: 
-imageURL: 
+imageURL: https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/apple-icon.png
 bindable: false
 provisionOnlyOnce: true
