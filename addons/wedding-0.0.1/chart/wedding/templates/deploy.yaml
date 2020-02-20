@@ -13,27 +13,26 @@ spec:
         app: wedding
     spec:
       containers:
-        - name: wedding
-          image: raphaelschmitz/wedding:latest
-          imagePullPolicy: Always
-          ports:
-          - containerPort: 4200
-          env:
+      - name: wedding
+        image: docker.io/raphaelschmitz/wedding:latest
+        # This app listens on port 8080 for web traffic by default.
+        ports:
+        - containerPort: 4200
+        env:
           - name: PORT
             value: "4200"
-      imagePullSecrets:
-        - name: myregistrykey
+
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
   name: wedding
-  labels:
-    app: wedding
 spec:
-  ports:
-  - name: http
-    port: 4200
   selector:
     app: wedding
-
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 4200
+  type: LoadBalancer
