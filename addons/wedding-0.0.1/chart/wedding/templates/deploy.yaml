@@ -14,9 +14,9 @@ spec:
     spec: 
       containers: 
       - name: angular 
-        image: docker.io/raphaelschmitz/wedding:latest
+        image: docker.io/raphaelschmitz/helloworld-php:latest
         ports: 
-        - containerPort: 80 
+        - containerPort: 8080
 --- 
 kind: Service 
 apiVersion: v1 
@@ -27,8 +27,8 @@ spec:
     app: angular 
   ports: 
   - protocol: TCP 
-    port: 80 
-    targetPort: 80 
+    port: 8080
+    targetPort: 8080
   type: ClusterIP 
   
   
