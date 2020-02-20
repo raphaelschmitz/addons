@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: wedding
-        image: docker.io/raphaelschmitz/helloworld-php:latest
+        image: docker.io/raphaelschmitz/wedding:latest
         # This app listens on port 8080 for web traffic by default.
         ports:
         - containerPort: 8080
@@ -26,13 +26,11 @@ spec:
 
 apiVersion: v1
 kind: Service
-metadata:
-  name: wedding
 spec:
   selector:
     app: wedding
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8080
-  type: ClusterIP
+    - protocol: http
+      port: 8080
+    selector:
+      app: wedding
