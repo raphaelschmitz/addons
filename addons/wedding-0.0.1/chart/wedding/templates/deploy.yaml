@@ -13,7 +13,6 @@ spec:
         app: wedding
     spec:
       containers:
-        containers:
         - name: wedding
           image: DOCKER_USER/PRIVATE_REPO_NAME:latest
           imagePullPolicy: Always
