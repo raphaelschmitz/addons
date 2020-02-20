@@ -14,9 +14,8 @@ spec:
     spec:
       containers:
         - name: wedding
-          image: docker.io/raphaelschmitz/wedding:latest
+          image: raphaelschmitz/wedding:latest
           imagePullPolicy: Always
-          command: [ "echo", "SUCCESS" ]
           ports:
           - containerPort: 4200
           env:
