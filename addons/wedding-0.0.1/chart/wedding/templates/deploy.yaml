@@ -13,15 +13,18 @@ spec:
         app: wedding
     spec:
       containers:
-      - name: wedding
-        image: docker.io/raphaelschmitz/wedding:latest
-        ports:
-        - containerPort: 4200
-        env:
+        containers:
+        - name: wedding
+          image: DOCKER_USER/PRIVATE_REPO_NAME:latest
+          imagePullPolicy: Always
+          command: [ "echo", "SUCCESS" ]
+          ports:
+          - containerPort: 4200
+          env:
           - name: PORT
             value: "4200"
-        imagePullSecrets:
-          - name: docker-registry-secret
+      imagePullSecrets:
+        - name: myregistrykey
 ---
 apiVersion: v1
 kind: Service
