@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: wedding
-        image: docker.io/raphaelschmitz/wedding:latest
+        image: docker.io/raphaelschmitz/wedding
       imagePullSecrets:
         - name: docker-registry-secret # Specify the same Secret name you generated in the previous step for this Namespace.
         # This app listens on port 8080 for web traffic by default.
