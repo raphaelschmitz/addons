@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: wedding
-          image: DOCKER_USER/PRIVATE_REPO_NAME:latest
+          image: raphaelschmitz/wedding:latest
           imagePullPolicy: Always
           command: [ "echo", "SUCCESS" ]
           ports:
